@@ -1,11 +1,18 @@
 {
   "name": "captcha-node",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.0.1",
+  "description": "captcha generator",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sankooc/captcha-node.git"
+  },
+  "author": {
+    "email": "sankooc@163.com",
+    "name": "sankooc"
+  },
+  "license": "MIT"
 }

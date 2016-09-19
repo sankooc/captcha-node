@@ -16,9 +16,7 @@
 * install ImageMagick
 
 ```
-
 brew install imagemagick
-
 ```
 
 * install package
@@ -26,13 +24,11 @@ brew install imagemagick
 
 ```
 npm install captcha-node
-
 ```
 
 ## sample code
 
 ```
-
 var captcha = require('../index')
 var fs = require('fs')
 var target = __dirname + '/gen.png';
@@ -43,20 +39,18 @@ captcha.genCaptcha({},function(err,data){
     }
     fs.writeFileSync(target,data.data);
 });
-
-
 ```
 
 
 ## option
 
-    * width
-    * height
-    * fontsize
-    * skech
-    * fontWidth
-    * bgcolor
-    * scolor
-    * fcolor
-    * text
-    * font_path
+* width
+* height
+* fontsize
+* skech
+* fontWidth
+* bgcolor
+* scolor
+* fcolor
+* text
+* font_path
