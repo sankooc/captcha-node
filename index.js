@@ -1,5 +1,3 @@
-var gm = require('gm').subClass({imageMagick: true});
-
 function createPoint(width,height,count){
     var result = [];
     while(result.length < count){
@@ -30,6 +28,9 @@ function createCaptcha(option,callback){
     var fcolor    = option.fcolor    || '#ccc';
     var text      = option.text;
     var font_path = option.fontPath  || __dirname+'/font/comic.ttf';
+	var engine    = option.engine    || 'ImageMagick'; //or 'GraphicsMagick'
+
+	var gm = engine === 'ImageMagick' ? require('gm').subClass({imageMagick: true}) : require('gm');
 
     var g = gm(width, height, bgcolor).font(font_path, fontsize)
     var points = createPoint(width,height,skech*3);
