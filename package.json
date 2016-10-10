@@ -14,5 +14,8 @@
     "email": "sankooc@163.com",
     "name": "sankooc"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "gm": "^1.23.0"
+  }
 }
