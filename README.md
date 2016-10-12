@@ -37,7 +37,7 @@ npm install captcha-node
 ## sample code
 
 ```
-var captcha = require('../index')
+var captcha = require('captcha-node')
 var fs = require('fs')
 var target = __dirname + '/gen.png';
 captcha.genCaptcha({},function(err,data){
