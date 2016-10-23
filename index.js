@@ -54,7 +54,7 @@ function createCaptcha(option,callback){
     });
 }
 
-exports.genCaptcha = function(option,callback){
+function _genCaptcha(option,callback){
     var text = option.text || getCode(6);
     option.text = text;
     createCaptcha(option,function(err,buf){
@@ -62,12 +62,33 @@ exports.genCaptcha = function(option,callback){
     })
 }
 
-exports.genBase64Captcha = function(option,callback){
-    var text = option.text || getCode(6);
-    option.text = text;
-    createCaptcha(option,function(err,buf){
-        var ret = buf.toString('base64');
-        ret = 'data:image/png;base64,'+ ret
-        return callback(err,{data:ret,text:text});
-    })
+function _genBase64Captcha(option, callback){
+  var text = option.text || getCode(6);
+  option.text = text;
+  createCaptcha(option,function(err,buf){
+      var ret = buf.toString('base64');
+      ret = 'data:image/png;base64,'+ ret
+      return callback(err,{data:ret,text:text});
+  })
 }
+
+function _rely(fn){
+  return function(option,callback){
+    if(callback){
+      return fn(option,callback);
+    }else{
+      return new Promise(function(resolve,reject){
+        fn(option,function(err,result){
+            if(err){
+                return reject(err);
+            }
+            return resolve(result);
+        });
+      });
+    }
+  }
+}
+
+exports.genCaptcha = _rely(_genCaptcha);
+
+exports.genBase64Captcha = _rely(_genBase64Captcha);

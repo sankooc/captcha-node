@@ -36,6 +36,8 @@ npm install captcha-node
 
 ## sample code
 
+callback
+
 ```
 var captcha = require('captcha-node')
 var fs = require('fs')
@@ -49,6 +51,16 @@ captcha.genCaptcha({},function(err,data){
 });
 ```
 
+co
+
+```
+co(function* (){
+  return yield captcha.genCaptcha({})
+}).then((data) => {
+  fs.writeFileSync(target,data.data);
+}).catch(console.error.bind(console));
+
+```
 
 ## option
 
