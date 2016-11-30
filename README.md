@@ -64,14 +64,14 @@ co(function* (){
 
 ## option
 
-* width
-* height
-* fontsize
-* skech
-* fontWidth
-* bgcolor
-* scolor
-* fcolor
-* text
-* font_path
-* engine - `ImageMagick` by default. Set as `GraphicsMagick` if you use it.
+* **width** *(Default: 150)* - Image width.
+* **height** *(Default: 50)* - Image height.
+* **fontsize** *(Default: 30)* - Font size.
+* **skech** *(Default: 10)* - Strokes count.
+* **fontWidth** *(Default: 3)* - Width of text and stroke.
+* **bgcolor** *(Default: '#fff')* - Background color.
+* **scolor** *(Default: '#ddd')* - Stroke color.
+* **fcolor** *(Default: '#ccc')* - Font color.
+* **text** - Captcha text.
+* **font_path** *(Default: '/font/comic.ttf')* - Path to the font file.
+* **engine** *(Default: 'ImageMagick')* - Graphics engine tool. Set as 'GraphicsMagick' if you use it.
